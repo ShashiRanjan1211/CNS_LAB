@@ -38,7 +38,7 @@ int main()
     if (crc(recv, op, poly, 0))
         cout << "No error in data" << endl;
     else
-        cout << "Error in data transmission has occurred less" << endl;
+        cout << "Error in data transmission has occurred " << endl;
     return 0;
 }
 
