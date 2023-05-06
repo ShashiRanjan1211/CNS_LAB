@@ -162,6 +162,4 @@ cout << "Enter the plaintext message: ";
     
     
     
-    cout << "Decrypted message: " <<decrpyt_text  << endl;
-    return 0;
-}
+   
