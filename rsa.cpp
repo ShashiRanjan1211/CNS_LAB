@@ -27,6 +27,18 @@ int modInverse(int a, int m) {
     }
     return -1;
 }
+int modExp(int base, int exp, int mod) {
+    int result = 1;
+    while (exp > 0) {
+        if (exp % 2 == 1) {
+            result = (result * base) % mod;
+        }
+        base = (base * base) % mod;
+        exp /= 2;
+    }
+    return result;
+}
+
 int main() {
     int p, q, n, phi, e, d;
     cout << "Enter a prime number for p: ";
@@ -48,7 +60,7 @@ int main() {
     cin >> e;
     while (e <= 1 || e >= phi || gcd(e, phi) != 1) {
         if(e>=phi || e<=1)  {cout <<"Enter correct value of e:"<<endl;
-           cin>>e;}
+           cin>>e;
            else e++;
     }
     d = modInverse(e, phi);
@@ -59,7 +71,8 @@ int main() {
     cin >> plaintext;
     int ciphertext = fmod(pow(plaintext, e), n);
     cout << "Encrypted message: " << ciphertext << endl;
-    plaintext = fmod(pow(ciphertext, d), n);
+plaintext = modExp(ciphertext, d, n);
     cout << "Decrypted message: " << plaintext << endl;
     return 0;
 }
+
