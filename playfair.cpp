@@ -120,7 +120,7 @@ cout << "Enter the plaintext message: ";
     string ciphertext = encrypt(plaintext, key);
     cout << "Encrypted message: " << ciphertext << endl;
     string decrpyt_text=decrypt(ciphertext,key);
-    cout<<"Plain text is : "<<decrypt_text;
+    cout<<"Plain text is : "<< decrpyt_text <<endl;
     return 0;
     }
     
